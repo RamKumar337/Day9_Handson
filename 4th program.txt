@@ -1,0 +1,47 @@
+package Day9handson;
+import java.util.*;
+public class example4 {
+	
+	public static Scanner in;
+	 
+	public static void main(String[] args) {
+		
+		in = new Scanner(System.in);
+		System.out.println("Enter the no of values: ");
+	int k1 = Integer.parseInt(in.nextLine());
+	
+	LinkedHashMap<String, String> lm = new LinkedHashMap<String, String>();
+	
+	for (int i = 0; i < k1; i++) {
+		System.out.println("Enter employee name: ");
+	String k = in.nextLine();
+	System.out.println("enter the desigination");
+	String s = in.nextLine();
+	lm.put(k, s);
+	}
+	String n = in.nextLine();
+	LinkedHashMap<String, String> lm1 = new LinkedHashMap<String, String>();
+	lm1 = dis(lm, n);
+	Iterator<String> it = lm1.keySet().iterator();
+	 
+	while (it.hasNext()) {
+	String s2 = it.next();
+	System.out.println(s2);
+	}
+	}
+	 
+	public static LinkedHashMap<String, String> dis(LinkedHashMap<String, String> h1, String n) 
+	{
+	int k = 0;
+	LinkedHashMap<String, String> hm1 = new LinkedHashMap<String, String>();
+	Iterator<String> it = h1.keySet().iterator();
+	while (it.hasNext()) {
+	String s2 = it.next();
+	String s3 = h1.get(s2);
+	if (s3.equals(n))
+	hm1.put(s2, s3);
+	}
+	return hm1;
+	}
+	 
+	}
